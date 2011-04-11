@@ -11,7 +11,12 @@ public class Station {
 
     private Position position;
 
-    public Station () {
+    public Station(String nom, int tpsArret, Position position)
+    {
+        this.nom = nom;
+        this.tpsArret = tpsArret;
+        this.position = position;
+        this.hasIncident = false;
     }
 
     public boolean getHasIncident () {

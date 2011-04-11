@@ -11,7 +11,12 @@ public class Troncon {
 
     private int tpsParcours;
 
-    public Troncon () {
+    public Troncon(Station depart, Station arrivee, int tpsParcours)
+    {
+        this.depart = depart;
+        this.arrivee = arrivee;
+        this.tpsParcours = tpsParcours;
+        this.hasIncident = false;
     }
 
     public Station getArrivee () {

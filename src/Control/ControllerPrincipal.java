@@ -4,10 +4,9 @@ import Model.Station;
 import Model.Ligne;
 import Model.Troncon;
 
-/* salut les nicos */
 
 public class ControllerPrincipal {
-    /* test 2 */
+    
     public static final ControllerPrincipal INSTANCE = new ControllerPrincipal();
 
     public void localiserUser () {
