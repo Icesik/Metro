@@ -1,9 +1,10 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class Ligne {
+public class Ligne implements Serializable{
 
     private List<Troncon> parcours;
 

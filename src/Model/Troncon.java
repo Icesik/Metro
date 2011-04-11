@@ -1,7 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 
-public class Troncon {
+
+public class Troncon implements Serializable{
 
     private Station depart;
 

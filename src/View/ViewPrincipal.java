@@ -1,30 +1,49 @@
 package View;
 
-
+import Control.ControllerPrincipal;
 import Model.Troncon;
 import Model.Ligne;
 import Model.Station;
+import java.util.Scanner;
 
+public class ViewPrincipal implements Runnable
+{
 
-public class ViewPrincipal {
+    public void run()
+    {
+        Scanner sc = new Scanner(System.in);
+        Integer choix = 0;
 
-    public ViewPrincipal () {
+        do
+        {
+            System.out.println("MENU");
+            choix = Integer.valueOf(sc.nextLine());
+        }
+        while(choix != 0);
     }
 
-    public void saisirPosition () {
+    public void saisirPosition(int x, int y)
+    {
+        ControllerPrincipal.getINSTANCE().localiserUser(x, y);
     }
 
-    public void calculerItineraire () {
+    public void calculerItineraire()
+    {
+        ControllerPrincipal.getINSTANCE().calculerItineraire();
     }
 
-    public void ajouter (Station s) {
+    public void ajouter(Station s)
+    {
+        ControllerPrincipal.getINSTANCE().ajouter(s);
     }
 
-    public void ajouter (Troncon t) {
+    public void ajouter(Troncon t)
+    {
+        ControllerPrincipal.getINSTANCE().ajouter(t);
     }
 
-    public void ajouter (Ligne l) {
+    public void ajouter(Ligne l)
+    {
+        ControllerPrincipal.getINSTANCE().ajouter(l);
     }
-
 }
-
