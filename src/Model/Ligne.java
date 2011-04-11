@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,12 +19,28 @@ public class Ligne {
         this.parcours = val;
     }
 
-    public Troncon trouverIncidentOnStation () {
-        return null;
+    public List<Troncon> trouverIncidentOnTroncon () {
+        List<Troncon> tronconIncident = new ArrayList<Troncon>();
+        for(Troncon troncon : parcours) {
+            if(troncon.getHasIncident()) {
+                tronconIncident.add(troncon);
+            }
+        }
+
+        return tronconIncident;
     }
 
-    public Station trouverIncidentOnTroncon () {
-        return null;
+    public List<Station> trouverIncidentOnStation () {
+        List<Station> stationIncident = new ArrayList<Station>();
+        for(Troncon troncon : parcours) {
+            if(troncon.getArrivee().getHasIncident()) {
+                stationIncident.add(troncon.getArrivee());
+            }
+            if(troncon.getDepart().getHasIncident()) {
+                stationIncident.add(troncon.getDepart());
+            }
+        }
+        return stationIncident;
     }
 
 }
