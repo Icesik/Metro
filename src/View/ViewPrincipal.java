@@ -27,9 +27,9 @@ public class ViewPrincipal implements Runnable
         ControllerPrincipal.getINSTANCE().localiserUser(x, y);
     }
 
-    public void calculerItineraire()
+    public void calculerItineraire(int type)
     {
-        ControllerPrincipal.getINSTANCE().calculerItineraire();
+                ControllerPrincipal.getINSTANCE().calculerItineraire(); 
     }
 
     public void ajouter(Station s)

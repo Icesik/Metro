@@ -6,29 +6,35 @@ import Model.Position;
 import Model.Troncon;
 import Model.User;
 
+public class ControllerPrincipal
+{
 
-public class ControllerPrincipal {
-    
     private static final ControllerPrincipal INSTANCE = new ControllerPrincipal();
-    private  ControllerGPS controllerGps = new ControllerGPS();
+    private ControllerGPS controllerGps = new ControllerGPS();
     private ControllerMetro controllerMetro = new ControllerMetro();
 
-    public void localiserUser (int x, int y) {
+    public void localiserUser(int x, int y)
+    {
         User.getINSTANCE().setPosition(new Position(x, y));
     }
 
-    public void calculerItineraire () {
+    public void calculerItineraire()
+    {
+        
     }
 
-    public void ajouter (Station s) {
+    public void ajouter(Station s)
+    {
         controllerMetro.getStations().add(s);
     }
 
-    public void ajouter (Troncon t) {
+    public void ajouter(Troncon t)
+    {
         controllerMetro.getTroncons().add(t);
     }
 
-    public void ajouter (Ligne l) {
+    public void ajouter(Ligne l)
+    {
         controllerMetro.getLignes().add(l);
     }
 
@@ -46,6 +52,4 @@ public class ControllerPrincipal {
     {
         return controllerMetro;
     }
-
 }
-
