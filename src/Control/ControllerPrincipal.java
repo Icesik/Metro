@@ -30,5 +30,16 @@ public class ControllerPrincipal {
     {
         return INSTANCE;
     }
+
+    public ControllerGPS getControllerGps()
+    {
+        return controllerGps;
+    }
+
+    public ControllerMetro getControllerMetro()
+    {
+        return controllerMetro;
+    }
+
 }
 
