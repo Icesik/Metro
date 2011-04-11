@@ -34,11 +34,11 @@ public class Ligne implements Serializable{
     public List<Station> trouverIncidentOnStation () {
         List<Station> stationIncident = new ArrayList<Station>();
         for(Troncon troncon : parcours) {
-            if(troncon.getArrivee().getHasIncident()) {
-                stationIncident.add(troncon.getArrivee());
-            }
             if(troncon.getDepart().getHasIncident()) {
                 stationIncident.add(troncon.getDepart());
+            }
+            if(troncon.getArrivee().getHasIncident()) {
+                stationIncident.add(troncon.getArrivee());
             }
         }
         return stationIncident;
