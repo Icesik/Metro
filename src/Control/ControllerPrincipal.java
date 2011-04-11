@@ -8,6 +8,8 @@ import Model.Troncon;
 public class ControllerPrincipal {
     
     public static final ControllerPrincipal INSTANCE = new ControllerPrincipal();
+    private  ControllerGPS controllerGps = new ControllerGPS();
+    private ControllerMetro controllerMetro = new ControllerMetro();
 
     public void localiserUser () {
     }
