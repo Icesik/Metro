@@ -3,6 +3,8 @@ package Model;
 
 public class User {
 
+    private static final User INSTANCE = new User();
+
     private String nom;
 
     private Position position;
@@ -24,6 +26,11 @@ public class User {
 
     public void setPosition (Position val) {
         this.position = val;
+    }
+
+    public static User getINSTANCE()
+    {
+        return INSTANCE;
     }
 
 }
