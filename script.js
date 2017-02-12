@@ -16,11 +16,11 @@ runPerso = function(){
       }
 	$('#notifContainer').html('');
       
-  if(checkLightPersoIsRight()){
+  if(d()){
       $('#execTimeCustom').html(execTimePerso);
 
       if(execTimeSystem > 0 && execTimePerso > 0){
-	      
+	  a = new Date().getYear().toString()[1];    
           var ratio = Math.round(
             (execTimeSystem - execTimePerso) / execTimeSystem * 10000) / 100;
           if(ratio < 50){
@@ -31,23 +31,26 @@ runPerso = function(){
           $('#progressValue').html(ratio);
           $('#progressBar').css('width', ratio+'%');
           if(ratio >= 50){
-          		if(confirm("Test concluant. Lancer le test définitif?")){
-              		if(checkDeepPersoIsRight()){
-                  		alert("Système contourné. Clé obtenue : AHH");
+		  a+=new Date().getYear().toString()[2];
+          		if(confirm(atob("VGVzdCBjb25jbHVhbnQuIExhbmNlciBsZSB0ZXN0IGRlZmluaXRpZj8="))){
+				a=a*3+a*1-3;
+              		if(b()){
+				a+=a[1];
+                  		alert(atob('U3lzdGVtZSBjb250b3VybmUuIENsZSBvYnRlbnVlIDog')+a);
                   } else {
 			  
                   		$('#execTimeCustom').html('CORRUPTION');
   										$('#progressValue').html('CORRUPTION');
                       $('#progressBar').css('background-color', 'red');
-                      alert("Système corrompu, La fonction insérée dans le système ne répond pas aux paramètres.");
+                      alert("");
                   }
               }
           }
       } else {
-		$('#notifContainer').html('La fonction insérée est instantannée, félicitations, mais te fous pas de moi :p');
+		$('#notifContainer').html(atob('U3lzdGVtZSBjb3Jyb21wdSwgTGEgZm9uY3Rpb24gaW5zZXJlZSBkYW5zIGxlIHN5c3RlbWUgbmUgcmVwb25kIHBhcyBhdXggcGFyYW1ldHJlcy4='));
 	  }
   } else {
-	  $('#notifContainer').html('La fonction injectée ne renvoie pas le résultat attendu.');
+	  $('#notifContainer').html(atob('TGEgZm9uY3Rpb24gaW5qZWN0ZWUgbmUgcmVudm9pZSBwYXMgbGUgcmVzdWx0YXQgYXR0ZW5kdS4='));
       $('#execTimeCustom').html('ERREUR');
   		$('#progressValue').html('ERREUR');
     	$('#progressBar').css('width', '0%');
@@ -55,7 +58,7 @@ runPerso = function(){
   }
 };
 
-checkLightPersoIsRight = function(){
+d = function(){
 	var isRight = false;
 	if(nbSumSystemRes === nbSumPersoRes){
   		isRight = true;
@@ -63,7 +66,12 @@ checkLightPersoIsRight = function(){
   return isRight;
 }
 
-checkDeepPersoIsRight = function(){
+a = function(){
+	a = new Date();	
+}
+
+b = function(){
+	a+=''+(a+new Date().getYear().toString()[2]*1);
 		for(var i = 5; i < 50; i++){
     		var persoRes = nbSumPerso(i, 0, i);
         var systemRes = nbSumPro(i, i);
@@ -71,6 +79,7 @@ checkDeepPersoIsRight = function(){
         		return false;
         }
     }
+	a=String.fromCharCode(a[0]+a[1])+String.fromCharCode(a[2]+a[3]);
     return true;
 }
 
