@@ -30,23 +30,24 @@ runPerso = function(){
           }
           $('#progressValue').html(ratio);
           $('#progressBar').css('width', ratio+'%');
-	  await sleep(100);
-          if(ratio >= 50){
-		  a+=new Date().getYear().toString()[2];
-          		if(confirm(atob("VGVzdCBjb25jbHVhbnQuIExhbmNlciBsZSB0ZXN0IGRlZmluaXRpZj8="))){
-				a=a*3+a*1-3;
-              		if(b()){
-				a+=a[1];
-                  		alert(atob('U3lzdGVtZSBjb250b3VybmUuIENsZSBvYnRlbnVlIDog')+a);
-                  } else {
-			  
-                  		$('#execTimeCustom').html('CORRUPTION');
-  										$('#progressValue').html('CORRUPTION');
-                      $('#progressBar').css('background-color', 'red');
-                      alert("");
-                  }
-              }
-          }
+	  setTimeout(function(){
+		  if(ratio >= 50){
+			  a+=new Date().getYear().toString()[2];
+				if(confirm(atob("VGVzdCBjb25jbHVhbnQuIExhbmNlciBsZSB0ZXN0IGRlZmluaXRpZj8="))){
+					a=a*3+a*1-3;
+				if(b()){
+					a+=a[1];
+					alert(atob('U3lzdGVtZSBjb250b3VybmUuIENsZSBvYnRlbnVlIDog')+a);
+			  } else {
+
+					$('#execTimeCustom').html('CORRUPTION');
+											$('#progressValue').html('CORRUPTION');
+			      $('#progressBar').css('background-color', 'red');
+			      alert("");
+			  }
+		      }
+		  }
+	  }, 10);
       } else {
 		$('#notifContainer').html(atob('U3lzdGVtZSBjb3Jyb21wdSwgTGEgZm9uY3Rpb24gaW5zZXJlZSBkYW5zIGxlIHN5c3RlbWUgbmUgcmVwb25kIHBhcyBhdXggcGFyYW1ldHJlcy4='));
 	  }
