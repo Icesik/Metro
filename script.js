@@ -116,8 +116,6 @@ getFunctionDuration = function(jsOperations, isSystem){
     return time;
 };
 
-$(document).ready(function(){
-	$('body').on('click', '#triggerRunPerso', function(){
-		runPerso();
-	});
+$('body').on('click', '#triggerRunPerso', function(){
+	runPerso();
 });
