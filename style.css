@@ -2,6 +2,13 @@ body{
     font-family: 'raleway';
 }
 
+#notifContainer{
+    font-size: 2em;
+    color: red;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
 .timeContainer{
     text-align: center;
     padding: 1em 0px;
