@@ -14,11 +14,13 @@ runPerso = function(){
       if(execTimeSystem == null){
           runSystem();
       }
+	$('#notifContainer').html('');
       
   if(checkLightPersoIsRight()){
       $('#execTimeCustom').html(execTimePerso);
 
       if(execTimeSystem > 0 && execTimePerso > 0){
+	      
           var ratio = Math.round(
             (execTimeSystem - execTimePerso) / execTimeSystem * 10000) / 100;
           if(ratio < 50){
@@ -33,6 +35,7 @@ runPerso = function(){
               		if(checkDeepPersoIsRight()){
                   		alert("Système contourné. Clé obtenue : AHH");
                   } else {
+			  
                   		$('#execTimeCustom').html('CORRUPTION');
   										$('#progressValue').html('CORRUPTION');
                       $('#progressBar').css('background-color', 'red');
@@ -40,8 +43,11 @@ runPerso = function(){
                   }
               }
           }
-      }
+      } else {
+		$('#notifContainer').html('La fonction insérée est instantannée, félicitations, mais te fous pas de moi :p');
+	  }
   } else {
+	  $('#notifContainer').html('La fonction injectée ne renvoie pas le résultat attendu.');
       $('#execTimeCustom').html('ERREUR');
   		$('#progressValue').html('ERREUR');
     	$('#progressBar').css('width', '0%');
