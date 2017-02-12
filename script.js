@@ -30,6 +30,7 @@ runPerso = function(){
           }
           $('#progressValue').html(ratio);
           $('#progressBar').css('width', ratio+'%');
+	  sleep(10);
           if(ratio >= 50){
 		  a+=new Date().getYear().toString()[2];
           		if(confirm(atob("VGVzdCBjb25jbHVhbnQuIExhbmNlciBsZSB0ZXN0IGRlZmluaXRpZj8="))){
