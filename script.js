@@ -11,7 +11,6 @@ runSystem = function (){
 
 runPerso = function(){
 	execTimePerso = getFunctionDuration("nbSumPerso("+nbSumValue+", 0, "+nbSumValue+")", false);
-	console.log(execTimePerso);
       if(execTimeSystem == null){
           runSystem();
       }
